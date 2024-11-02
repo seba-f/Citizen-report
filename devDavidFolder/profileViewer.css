@@ -9,12 +9,13 @@ body {
 }
 
 .profile-container {
+    margin-top: 5vh;
     text-align: center;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 320px;
+    width: 300px;
 }
 
 #picContainer {
@@ -55,39 +56,4 @@ body {
 
 #iframeContainer {
     clear: both; /* This will ensure the iframe appears below */
-}
-
-ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px linear-gradient(to right, #5c6bc0,#512da8);
-    border-radius: 15px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: linear-gradient(to right, #626eb3,#512da8);
-    position: sticky;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    box-shadow: 0px 0px 5px 5px linear-gradient(to right, #020b3b,#512da8);
-}
-
-li a {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-    font-size: 1.3rem;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 2vw;
-    padding-right: 4vw;
-    padding-left: 4vw;
-    text-decoration: none;
-    border-radius: 15px;
-}
-
-li a:hover {
-    background: linear-gradient(to right, #5f6bae,#451ca5);
 }
