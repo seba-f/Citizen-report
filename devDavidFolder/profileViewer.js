@@ -6,6 +6,7 @@ function generateForms(){
         iframeElement.src = "forms.html";
         iframeElement.style.width = "100%";  // Optional: makes iframe full width
         iframeElement.style.height = "500px"; // Optional: sets iframe height
+        iframeElement.style.display = "block"; 
         let iframeContainer = document.getElementById("iframeContainer");
         iframeContainer.appendChild(iframeElement); // Appends iframe to body
         openForms = false;
