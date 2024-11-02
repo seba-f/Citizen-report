@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        <form>
+          <h1>Creează un cont</h1>
+          <span>completează câmpurile și intră în contul de utilizator</span>
+          <input type="text" placeholder="Nume" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Parola" />
+          <button>Înscrie-te</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in">
+        <form>
+          <h1>Conectează-te</h1>
+          <span
+            >înregistrarea se face prin completarea câmpurilor de mai jos</span
+          >
+
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Parola" />
+          <a href="#">Ai uitat parola?</a>
+          <button>Conectează-te</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Bine ai revenit!</h1>
+            <p>
+              Completează câmpurile pentru a putea vedea sau raporta pericolele
+              din jurul dumneavoastră!
+            </p>
+            <button class="hidden" id="login">Conectează-te</button>
+          </div>
+
+          <div class="toggle-panel toggle-right">
+            <h1>Bine ai venit!</h1>
+            <p>
+              Completează câmpurile pentru a putea vedea sau raporta pericolele
+              din jurul dumneavoastră!
+            </p>
+            <button class="hidden" id="register">Înscrie-te</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>
