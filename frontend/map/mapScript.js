@@ -35,18 +35,24 @@ function onLocationFound(e) {
 	L.circle(e.latlng, { radius: e.accuracy }).addTo(map);
 }
 
-function markerClick(e){
-    e.addTo(map).bindPopup("MARKER").openPopup();
+
+function markerClick() {
+	console.log("CLICK");
+    this.openPopup();
 }
 
-function addMarker(e){
-    var newMarker=new L.marker(e.latlng).addTo(map).on('click',markerClick);
+function addMarker(e) {
+    var newMarker = L.marker(e.latlng)
+        .addTo(map).bindPopup("MARKER")
+        .on('click', markerClick); 
 }
 
-
+map.on('click', addMarker);
 map.on("locationfound", onLocationFound);
 
-map.on('click',addMarker);
+
+const navBar=document.getElementsByClassName("navbar")[0];
+navBar.addEventListener('click',(e)=>{e.stopPropagation();});
 
 function fetchReports() {
 	fetch("http://localhost:5005/api/reports")
