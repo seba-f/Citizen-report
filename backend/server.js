@@ -3,6 +3,7 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const path = require('path');
 const PORT = 5005;
+const bcrypt=require('bcrypt');
 
 const db=new sqlite3.Database('./hackathonDB.db',(err)=>{
     if(err) { console.error('CANNOT CONNECT TO DATABASE: ',err.message); }
@@ -22,6 +23,10 @@ app.get('/api/reports',(req,res)=>{
     });
 });
 
+//login check
+app.post('/api/login',(req,res)=>{
+   
+})
 
 //send static page to user
 app.get('/', (req, res) => {
@@ -69,6 +74,7 @@ app.post('/api/reports',(req,res)=>{
     });
 });
 })
+
 
 //start server
 app.listen(PORT,()=>{console.log('Server is running on http://localhost:',PORT);});
