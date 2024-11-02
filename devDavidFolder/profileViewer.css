@@ -57,10 +57,6 @@ body {
     clear: both; /* This will ensure the iframe appears below */
 }
 
-body{
-    background-color: orange;
-}
-
 ul {
     display: flex;
     align-items: center;
