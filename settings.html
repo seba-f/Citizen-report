@@ -5,6 +5,7 @@
     <title>Setări</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="settings_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css"> <!-- Include the navbar CSS -->
     <script src="settings_script.js" defer></script>
 </head>
 <body>
@@ -18,10 +19,10 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="account-general">
                         <div class="profile-image-section">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Imagine Profil" class="profile-image">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Imagine Profil" class="profile-image" id="profileImage">
                             <div class="image-controls">
                                 <label class="btn btn-default">Schimbă Imaginea
-                                    <input type="file" class="file-input">
+                                    <input id="fileInput" type="file" class="file-input" accept="image/png, image/jpeg, image/gif">
                                 </label>
                                 <div class="small-info">Doar JPG, GIF sau PNG permise</div>
                             </div>
@@ -72,27 +73,10 @@
                                 <label>Data nașterii</label>
                                 <input type="text" class="form-control" value="3 Mai 1995">
                             </div>
-                            <div class="form-group">
-                                <label>Țara</label>
-                                <select class="custom-select">
-                                    <option>România</option>
-                                    <option>Moldova</option>
-                                    <option>Statele Unite</option>
-                                    <option selected>Canada</option>
-                                    <option>Regatul Unit</option>
-                                    <option>Germania</option>
-                                    <option>Franța</option>
-                                </select>
-                            </div>
-
                             <h2>Informații de contact</h2>
                             <div class="form-group">
                                 <label>Telefon</label>
                                 <input type="text" class="form-control" value="+0 (123) 456 7891">
-                            </div>
-                            <div class="form-group">
-                                <label>Instagram</label>
-                                <input type="text" class="form-control" value="instagram.com/daniel_giur">
                             </div>
                         </div>
                     </div>
@@ -103,10 +87,20 @@
 
     <div class="text-right mt-3">
         <div class="button-container">
-            <button type="button" class="btn btn-default">Salvează modificările</button>
-            <button type="button" class="btn btn-default">Meniu Principal</button>
+            <button type="button" class="btn btn-default" onclick="salveaza_modificari()">Salvează modificările</button>
+            <button type="button" class="btn btn-default" onclick="inapoi_login()">Deconectare</button>
         </div>
     </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#map" class="btn btn-default" onclick="inapoi_meniu()">Map</a></li>
+            <li><a href="#profile">Profil</a></li>
+            <li><a href="#quick">Quick Report</a></li>        
+            <li><a href="#setari">Setari</a></li>
+        </ul>
+    </nav>
 </div>
 </body>
 </html>
