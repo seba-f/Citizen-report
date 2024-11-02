@@ -1,0 +1,147 @@
+body {
+    background: white;
+    margin: 20px auto;
+    padding: 0 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.profile-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-default {
+    border: 1px solid rgba(24, 28, 33, 0.1);
+    background: transparent;
+    color: #4E5155;
+    padding: 12px 18px; /* This controls the space around the text */
+    border-radius: 4px;
+    display: inline-flex; /* Change this to inline-flex */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text alignment */
+    transition: background 0.3s;
+}
+
+
+.btn-default:hover {
+    background: rgba(24, 28, 33, 0.05);
+}
+
+.image-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+.file-input {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.btn-outline-primary:hover {
+    background: rgba(38, 180, 255, 0.1);
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.settings-card {
+    box-shadow: 0 2px 6px rgba(24, 28, 33, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+
+
+.form-section {
+    margin-top: 30px;
+    font-size: 0.6em;
+}
+
+.small-info {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    width: 35%;
+    font-weight: bold;
+}
+
+input.form-control,
+textarea.form-control,
+select.custom-select {
+    flex: 1;
+    text-align: right;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+input.form-control:focus,
+textarea.form-control:focus,
+select.custom-select:focus {
+    border-color: #26B4FF;
+    outline: none;
+}
+
+/* Centering the buttons */
+.button-container {
+    text-align: center; /* Center align the buttons */
+    margin-top: 20px; /* Space above the button container */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+        padding: 0 5px;
+    }
+
+    .profile-image {
+        max-width: 80%;
+    }
+
+    .btn-default, .btn-outline-primary {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .form-section {
+        margin-top: 20px;
+    }
+
+    .settings-card {
+        margin: 15px 0;
+    }
+}
+
+.btn.btn-primary {
+    margin: 20px auto;
+    padding: 0 5px;
+}
