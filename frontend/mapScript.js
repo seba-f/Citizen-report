@@ -34,7 +34,19 @@ function onLocationFound(e) {
 	L.marker(e.latlng).addTo(map).bindPopup("You are here!").openPopup();
 	L.circle(e.latlng, { radius: e.accuracy }).addTo(map);
 }
+
+function markerClick(e){
+    e.addTo(map).bindPopup("MARKER").openPopup();
+}
+
+function addMarker(e){
+    var newMarker=new L.marker(e.latlng).addTo(map).on('click',markerClick);
+}
+
+
 map.on("locationfound", onLocationFound);
+
+map.on('click',addMarker);
 
 function fetchReports() {
 	fetch("http://localhost:5005/api/reports")
@@ -96,3 +108,5 @@ async function addReport(report) {
 }
 
 document.addEventListener("DOMContentLoaded", fetchReports);
+
+
