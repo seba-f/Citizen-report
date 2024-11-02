@@ -62,6 +62,20 @@
             <option value="Ridicata">Ridicată</option>
           </select>
         </div>
+        <div class="locatie">
+          <label for="locatie">Locație:</label>
+          <input
+            type="text"
+            id="locatie"
+            name="locatie"
+            placeholder="Introdu locația problemei"
+            required
+          />
+          <button type="button" onclick="getLocation()">
+            Obține Locația Mea
+          </button>
+        </div>
+
         <div class="submit">
           <button type="submit">Trimite Raportul</button>
         </div>
