@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Formular</title>
+		<link rel="stylesheet" href="forms.css" />
+		<link rel="stylesheet" href="../navStyle.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="formular">
+				<div class="categorie">
+					<label for="categorie">Categorie:</label>
+					<select
+						id="categorie"
+						name="categorie"
+						required
+						onchange="oAltaCategorie()"
+					>
+						<option value="">Selectează categoria:</option>
+						<option value="DegradareSuprafațăPietonală">
+							Degradare suprafață pietonală
+						</option>
+						<option value="DegradareCarosabil">Degradare carosabil</option>
+						<option value="Iluminat">Iluminat stradal defect</option>
+						<option value="Deseuri">Deșeuri abandonate</option>
+						<option value="Altele">Altele</option>
+					</select>
+				</div>
+
+				<div id="otherCategoryDiv" class="hidden">
+					<label for="altaCategorie">Specifică problema:</label>
+					<input
+						type="text"
+						id="altaCategorie"
+						name="altaCategorie"
+						placeholder="Descrie problema"
+					/>
+				</div>
+
+				<div class="descriere">
+					<label for="descriere">Descrierea problemei: </label>
+					<textarea
+						id="descriere"
+						name="descriere"
+						placeholder="Descrie problema în detaliu"
+						rows="5"
+						required
+					></textarea>
+				</div>
+
+				<div class="imagine">
+					<label for="imagine">Fotografiază problema:</label>
+					<input type="file" id="imagine" name="imagine" accept="image/*" />
+				</div>
+				<div class="prioritate">
+					<label for="prioritate">Prioritate:</label>
+					<select id="prioritate" name="prioritate" required>
+						<option value="">Selectează prioritatea:</option>
+						<option value="Scazuta">Scăzută</option>
+						<option value="Medie">Medie</option>
+						<option value="Ridicata">Ridicată</option>
+					</select>
+				</div>
+				<div class="locatie">
+					<label for="locatie">Locație:</label>
+					<input
+						type="text"
+						id="locatie"
+						name="locatie"
+						placeholder="Introdu locația problemei"
+						required
+					/>
+					<button type="button" onclick="getLocation()">
+						Obține Locația Mea
+					</button>
+				</div>
+
+				<div class="submit">
+					<button type="submit" id="submitBtn">Trimite Raportul</button>
+				</div>
+			</div>
+		</div>
+
+		<ul class="navbar">
+			<li><a href="../map/map.html" class="navBtn">Map</a></li>
+			<li>
+				<a href="../devDavidFolder/profileViewer.html" class="navBtn">Profil</a>
+			</li>
+			<li>
+				<a href="../formular/forms.html" class="navBtn">Quick Report</a>
+			</li>
+			<li><a href="../settings/settings.html" class="navBtn">Setari</a></li>
+		</ul>
+		<script src="forms.js"></script>
+	</body>
+</html>

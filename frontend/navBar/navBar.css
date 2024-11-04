@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(to right, #5c6bc0, #512da8);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+ul.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 1000;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+ul.navbar li {
+  margin: 0 10px;
+}
+
+ul.navbar li a {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s;
+}
+
+ul.navbar li a:hover {
+  background: linear-gradient(
+    to right,
+    #7c48c4,
+    #4c75fd
+  ); /* Culoare mai caldă */
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+ul.navbar:hover {
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+ul.navbar li a:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<meta charset="utf-8" />
+		<title>Setări</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="settings_style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="navbarSettings.css" />
+		<link rel="stylesheet" href="../navStyle.css" />
+		<!-- Include the navbar CSS -->
+		<script src="settings_script.js" defer></script>
+	</head>
+	<body>
+		<div class="settings-container">
+			<h2 align="center">Setări cont</h2>
+
+			<div class="settings-card">
+				<div class="row">
+					<!-- Tab-ul Setări Generale -->
+					<div class="col-md-9">
+						<div class="tab-content">
+							<div class="tab-pane active" id="account-general">
+								<div class="profile-image-section">
+									<img
+										src="https://bootdey.com/img/Content/avatar/avatar1.png"
+										alt="Imagine Profil"
+										class="profile-image"
+										id="profileImage"
+									/>
+									<div class="image-controls">
+										<label class="btn btn-default"
+											>Schimbă Imaginea
+											<input
+												id="fileInput"
+												type="file"
+												class="file-input"
+												accept="image/png, image/jpeg, image/gif"
+											/>
+										</label>
+										<div class="small-info">Doar JPG, GIF sau PNG permise</div>
+									</div>
+								</div>
+
+								<div class="form-section">
+									<div class="form-group">
+										<label>Nume de utilizator</label>
+										<input type="text" class="form-control" value="nmaxwell" />
+									</div>
+									<div class="form-group">
+										<label>Nume</label>
+										<input
+											type="text"
+											class="form-control"
+											value="Nelle Maxwell"
+										/>
+									</div>
+									<div class="form-group">
+										<label>Email</label>
+										<input
+											type="email"
+											class="form-control"
+											value="nmaxwell@mail.com"
+										/>
+									</div>
+								</div>
+							</div>
+
+							<!-- Tab-ul Schimbare Parolă -->
+							<div class="tab-pane" id="account-change-password">
+								<div class="form-section">
+									<div class="form-group">
+										<label>Parola curentă</label>
+										<input type="password" class="form-control" />
+									</div>
+									<div class="form-group">
+										<label>Parolă nouă</label>
+										<input type="password" class="form-control" />
+									</div>
+									<div class="form-group">
+										<label>Confirmă parola nouă</label>
+										<input type="password" class="form-control" />
+									</div>
+								</div>
+							</div>
+
+							<!-- Tab-ul Informații Adiționale -->
+							<div class="tab-pane" id="account-info">
+								<div class="form-section">
+									<div class="form-group">
+										<label>Biografie</label>
+										<textarea class="form-control" rows="5">
+Lorem ipsum dolor sit amet...</textarea
+										>
+									</div>
+									<div class="form-group">
+										<label>Data nașterii</label>
+										<input
+											type="text"
+											class="form-control"
+											value="3 Mai 1995"
+										/>
+									</div>
+									<h2>Informații de contact</h2>
+									<div class="form-group">
+										<label>Telefon</label>
+										<input
+											type="text"
+											class="form-control"
+											value="+0 (123) 456 7891"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-right mt-3">
+				<div class="button-container">
+					<button
+						type="button"
+						class="btn btn-default"
+						onclick="salveaza_modificari()"
+					>
+						Salvează modificările
+					</button>
+					<button
+						type="button"
+						class="btn btn-default"
+						onclick="inapoi_login()"
+					>
+						Deconectare
+					</button>
+				</div>
+			</div>
+
+			<!-- Navigation Bar -->
+			<ul class="navbar">
+				<li><a href="../map/map.html" class="navBtn">Map</a></li>
+				<li>
+					<a href="../devDavidFolder/profileViewer.html" class="navBtn"
+						>Profil</a
+					>
+				</li>
+				<li>
+					<a href="../formular/forms.html" class="navBtn">Quick Report</a>
+				</li>
+				<li><a href="../settings/settings.html" class="navBtn">Setari</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
