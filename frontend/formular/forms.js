@@ -39,6 +39,28 @@ function showPosition(position) {
       alert("A apărut o eroare la obținerea adresei.");
     });
 }
+async function addReport(report) {
+	console.log("Sending report data:", report);
+	try {
+		const response = await fetch("/api/reports", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(report),
+		});
+		const result = await response.json();
+
+		if (response.ok) {
+			console.log("Report added successfully:", result);
+		} else {
+			console.error("Error adding report:", result.error);
+		}
+    window.location.href="../map/map.html";
+	} catch (error) {
+		console.error("Network error:", error);
+	}
+}
 
 function showError(error) {
   switch (error.code) {
@@ -56,3 +78,14 @@ function showError(error) {
       break;
   }
 }
+
+const desc=document.getElementById("descriere");
+const uLat=localStorage.getItem("report").lat;
+const uLng=localStorage.getItem("report").lng;
+const adresa=document.getElementById("locatie");
+const userId=localStorage.getItem("user").id;
+
+var report={lat:uLat,lng:uLng,desc:desc.value,adresa:adresa.value,userId:userId}
+
+const submitBtn=document.getElementById("submitBtn");
+submitBtn.addEventListener('click',()=>{addReport(report);});

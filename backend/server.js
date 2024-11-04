@@ -10,7 +10,7 @@ const db=new sqlite3.Database('./hackathonDB.db',(err)=>{
     else { console.log('SUCCESFULLY CONNECTED ON PORT',PORT)}
 })
 
-app.use(express.static(path.join(__dirname, '../frontend/map')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 app.use(express.json());
 
 
@@ -30,7 +30,7 @@ app.post('/api/login',(req,res)=>{
 
 //send static page to user
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/map/map.html'));
+    res.sendFile(path.join(__dirname, '../frontend/login/login.html'));
 });
 
 //insert into users

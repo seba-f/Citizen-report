@@ -1,3 +1,4 @@
+
 //test user
 const testUser = {
 	username: "testuser123",
@@ -30,21 +31,37 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 }).addTo(map);
 
-function onLocationFound(e) {
-	L.marker(e.latlng).addTo(map).bindPopup("You are here!").openPopup();
-	L.circle(e.latlng, { radius: e.accuracy }).addTo(map);
+let userLat;
+let userLng;
+
+function selectReport(){
+	fetchReports();
+	
 }
 
+function onLocationFound(e) {
+		userLat=e.latlng.lat;
+		userLng=e.latlng.lng;
+		L.marker(e.latlng).addTo(map).bindPopup("You are here!").openPopup();
+		L.circle(e.latlng, { radius: e.accuracy }).addTo(map);
+	}
+
+const reportBtn=document.getElementsByClassName("navBtn")[2];
+
+reportBtn.addEventListener('click',()=>{
+	localStorage.setItem("report",{lat:userLat,lng:userLng,desc:"",adresa:"",userId:localStorage.getItem("user")});
+	console.log(localStorage.getItem("report"));
+	window.location.href="../formular/forms.html";
+});
 
 function markerClick() {
 	console.log("CLICK");
     this.openPopup();
 }
 
-function addMarker(e) {
-    var newMarker = L.marker(e.latlng)
-        .addTo(map).bindPopup("MARKER")
-        .on('click', markerClick); 
+function addMarker(e,lat,lng) {
+		var newMarker=L.marker([lat,lng]).addTo(map).bindPopup(selectReport(lat,lng));
+		newMarker.openPopup();
 }
 
 map.on('click', addMarker);
@@ -58,7 +75,7 @@ function fetchReports() {
 	fetch("http://localhost:5005/api/reports")
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data.items); // Log data or display it on your page
+			return data // Log data or display it on your page
 		})
 		.catch((error) => console.error("Error fetching items:", error));
 
@@ -91,28 +108,10 @@ async function addUser(user) {
 	}
 }
 
-async function addReport(report) {
-	console.log("Sending report data:", report);
-	try {
-		const response = await fetch("/api/reports", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(report),
-		});
-		const result = await response.json();
 
-		if (response.ok) {
-			console.log("Report added successfully:", result);
-		} else {
-			console.error("Error adding report:", result.error);
-		}
-	} catch (error) {
-		console.error("Network error:", error);
-	}
-}
 
 document.addEventListener("DOMContentLoaded", fetchReports);
+
+
 
 
